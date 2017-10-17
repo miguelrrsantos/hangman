@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HangMan</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- header -->
+    <header>
+        <div class="container">
+            <h1>The (Best) HangMan Game</h1>
+        </div> 
+    </header>
+
+    <!-- main -->
+    <main>
+        <div class="container">
+
+            <!-- word buttons display area -->
+            <div class="row">
+                <div class="btn-group col-lg-12" role="group" aria-label="word" id="word">
+
+                </div>
+            </div>
+
+            <div class="row"><p></p></div>
+
+            <!-- message alert area -->
+            <div class="row">
+                <div class="alert" role="alert" id="alert"></div>
+            </div>
+
+            <!-- letter buttons -->
+            <div class="row">
+                <div class="btn-group col-lg-12" role="group" aria-label="Letters" id="letterButtons">
+                    <button type="button" class="btn btn-default" id="A" value="not_clicked">A</button>
+                    <button type="button" class="btn btn-default" id="B" value="not_clicked">B</button>
+                    <button type="button" class="btn btn-default" id="C" value="not_clicked">C</button>
+                    <button type="button" class="btn btn-default" id="D" value="not_clicked">D</button>
+                    <button type="button" class="btn btn-default" id="E" value="not_clicked">E</button>
+                    <button type="button" class="btn btn-default" id="F" value="not_clicked">F</button>
+                    <button type="button" class="btn btn-default" id="G" value="not_clicked">G</button>
+                    <button type="button" class="btn btn-default" id="H" value="not_clicked">H</button>
+                    <button type="button" class="btn btn-default" id="I" value="not_clicked">I</button>
+                    <button type="button" class="btn btn-default" id="J" value="not_clicked">J</button>
+                    <button type="button" class="btn btn-default" id="K" value="not_clicked">K</button>
+                    <button type="button" class="btn btn-default" id="L" value="not_clicked">L</button>
+                    <button type="button" class="btn btn-default" id="M" value="not_clicked">M</button>
+                    <button type="button" class="btn btn-default" id="N" value="not_clicked">N</button>
+                    <button type="button" class="btn btn-default" id="O" value="not_clicked">O</button>
+                    <button type="button" class="btn btn-default" id="P" value="not_clicked">P</button>
+                    <button type="button" class="btn btn-default" id="Q" value="not_clicked">Q</button>
+                    <button type="button" class="btn btn-default" id="R" value="not_clicked">R</button>
+                    <button type="button" class="btn btn-default" id="S" value="not_clicked">S</button>
+                    <button type="button" class="btn btn-default" id="T" value="not_clicked">T</button>
+                    <button type="button" class="btn btn-default" id="U" value="not_clicked">U</button>
+                    <button type="button" class="btn btn-default" id="V" value="not_clicked">V</button>
+                    <button type="button" class="btn btn-default" id="W" value="not_clicked">W</button>
+                    <button type="button" class="btn btn-default" id="X" value="not_clicked">X</button>
+                    <button type="button" class="btn btn-default" id="Y" value="not_clicked">Y</button>
+                    <button type="button" class="btn btn-default" id="Z" value="not_clicked">Z</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <p></p>
+            </div
+            >
+            <!-- button new game -->
+            <div class="row">
+                <div class="col-lg-6" id="statistics">
+                    <table class="table table-striped" id="statisticstable">
+                        <thead>
+                            <tr>
+                                <th>Statistic</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Attempts</td>
+                                <td id="attemptsnumber"></td>
+                            </tr>
+                            <tr>
+                                <td>Failed</td>
+                                <td id="failednumber"></td>
+                            </tr>
+                            <tr>
+                                <td>Lifes</td>
+                                <td id="lifesnumber"></td>
+                            </tr>
+                            <tr>
+                                <td>Word Letters</td>
+                                <td id="wordlettersnumber"></td>
+                            </tr>                            
+                            <tr>
+                                <td>Letters Guessed</td>
+                                <td id="lettersguessednumber"></td>
+                            </tr>
+                            <tr>
+                                <td>Letters Remaining</td>
+                                <td id="letterremainingnumber"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="btn-group col-lg-6" role="group" aria-label="new game" id="gameButtons">
+                    <button type="button" class="btn btn-lg btn-info" id="newGame">New Game</button> 
+                    <button type="button" class="btn btn-lg btn-info" id="help" data-toggle="modal" data-target="#helpmodal">Help</button>  <!-- it will open a modal with info and rules -->
+                </div>
+            </div>
+
+            <!-- Help Modal -->
+            <div class="modal fade" id="helpmodal" role="dialog">
+                    <div class="modal-dialog">
+                        
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Help</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>New Game Button: starts a new game.</p> 
+                                <p>A player must enter a word to be guessed.</p>
+                                <p>In this version only characters from A to Z are allowed.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+        </div>  <!-- end of container -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row text-center">
+                <hr>
+                <p class="text-muted">&copy; 2017 Miguel Real. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hangman JavaScript code -->
+    <script src="js/hangman.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
